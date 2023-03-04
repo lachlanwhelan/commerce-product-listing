@@ -1,8 +1,15 @@
+import Header from "./components/header/header.component";
+import ProductList from "./components/product-list/product-list.component";
 
-const App = () => {
+
+const App = ({products}) => {
+
+    const types = [...new Set(products.map(product => product.type))];
+
     return (
         <div className="App">
-            <h1>Commerce product listing</h1>            
+            <Header types={types}/>
+            <ProductList products={products}/>
         </div>
     )
 }
