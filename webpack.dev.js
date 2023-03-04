@@ -1,45 +1,19 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const {merge} = require('webpack-merge');
+const common = require('./webpack.common');
 
 
-module.exports = {
+module.exports = merge(common, {
     mode: 'development',
 
-    entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'public'),
-        filename: 'main.bundle.js',
-    }, 
+    },
 
     devtool: 'source-map',
 
     devServer: {
         static: './public',
         port: 3000,
-    },
-
-    module: {
-        rules: [
-            {
-                test: /\.(js|jsx)$/,
-                exclude: /(node_modules)/,
-                loader: "babel-loader",
-                options: { 
-                    "presets": [
-                        ["@babel/preset-react", {
-                        "runtime": "automatic"
-                      }]
-                      ]
-                }
-            }
-        
-        ]
-    },
-
-    plugins: [
-        new HtmlWebpackPlugin({
-            minify: false,
-            template: './public/index.html'
-        })
-    ]
-}
+    }
+}) 
