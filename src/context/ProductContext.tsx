@@ -23,7 +23,6 @@ export type product = {
 export type state = {
     productList: product[],
     filteredList: product[],
-    types: string[],
     status: string,
     error: string
 }
@@ -43,7 +42,6 @@ export type contextDefaultValue = {
 const PRODUCT_LIST_INITIAL_STATE = {
     productList: [],
     filteredList: [],
-    types: [],
     status: 'idle',
     error: ''
 }
@@ -53,7 +51,6 @@ export const ProductsContext = createContext<contextDefaultValue>({
     state: {
         productList: [],
         filteredList: [],
-        types: [],
         status: 'idle',
         error: ''
     },
@@ -108,7 +105,6 @@ const productsReducer = (state : state, action: action) => {
             ...state,
             productList: payload,
             filteredList: payload,
-            types: [...new Set(state.productList.map((product: product) => product.type))],
             status: 'succeeded'
         }
         case PRODUCT_LIST_ACTIONS.FETCH_PRODUCTS_FAILED :

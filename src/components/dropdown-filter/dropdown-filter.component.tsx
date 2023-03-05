@@ -1,11 +1,12 @@
 import React, { FC, useContext } from "react";
 import { Form } from "react-bootstrap";
 import { ProductsContext } from "../../context/ProductContext";
+import { product } from "../../context/ProductContext";
 
 const DropdownFilter: FC = () => {
 
   const {state, filterByType}  = useContext(ProductsContext);
-  const {types} = state;
+  const types = [...new Set(state.productList.map((product: product) => product.type))];
 
   const handleOnChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
       filterByType(e.target.value)
