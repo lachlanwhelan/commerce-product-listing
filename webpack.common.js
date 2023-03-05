@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 
-    entry: './src/index.js',
+    entry: './src/index.tsx',
     output: {
         filename: 'main.bundle.js',
     },
@@ -29,7 +29,11 @@ module.exports = {
                   "css-loader",
                   "sass-loader",
                 ],
-            }
+            },
+            { 
+                test: /\.tsx?$/, 
+                loader: "ts-loader" 
+            },
         ]
     },
 
@@ -37,5 +41,10 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './public/index.html'
         })
-    ]
+    ],
+
+    resolve: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.css', '.scss'],
+        modules: ['src', 'node_modules'] // Assuming that your files are inside the src dir
+    }
 }
