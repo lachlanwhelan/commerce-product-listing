@@ -7,10 +7,10 @@ import "./header.style.scss";
 
 const Header: FC = () => {
     return (
-        <header className="header px-2 py-3 bg-light">
-            <Container className="header__inner">
-                <h3 className="header__title">Commerce Product Listing</h3>
-                <div className="header__group">
+        <header data-testid="header" className="header px-2 py-3 bg-light">
+            <Container data-testid="header-inner" className="header__inner">
+                <h3  data-testid="header-title" className="header__title">Commerce Product Listing</h3>
+                <div data-testid="header-group" className="header__group">
                     <Searchbar/>
                     <DropdownFilter />
                 </div>

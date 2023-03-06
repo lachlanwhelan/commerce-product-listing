@@ -14,8 +14,8 @@ const DropdownFilter: FC = () => {
 
     return (
       <Form.Group className="dropdown-filter">
-          <Form.Label  className="me-2" htmlFor="type-select">Filter by</Form.Label>
-          <Form.Select id="type-select" onChange={handleOnChange}>
+          <Form.Label data-testid="form-label"  className="me-2" htmlFor="type-select">Filter by</Form.Label>
+          <Form.Select data-testid="form-select" id="type-select" onChange={handleOnChange}>
             <option value="All">All</option>
             {
               types.map((type: string) => {

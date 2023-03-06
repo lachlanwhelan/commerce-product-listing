@@ -5,10 +5,10 @@ const Product : React.FC<product> = ({ productName, isSale, price, productImage}
     return (
         <Card className="m-2 position-relative" style={{ width: '19rem', overflow: 'hidden'}}>
             {isSale === true && <span className="position-absolute bg-danger text-white py-1 px-2">SALE</span>}
-            <Card.Img variant="top" src="/commerce-product-listing/images/dummy_600x400.png" alt={productImage} />
+            <Card.Img data-testid="product-img" variant="top" src={`/images/${productImage}`} alt={productImage} />
             <Card.Body>
-                <Card.Title>{productName}</Card.Title>
-                <Card.Text> {price} </Card.Text>
+                <Card.Title data-testid="product-name">{productName}</Card.Title>
+                <Card.Text data-testid="product-price"> {price} </Card.Text>
             </Card.Body>
         </Card>
     )

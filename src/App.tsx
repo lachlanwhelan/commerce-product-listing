@@ -10,10 +10,12 @@ const App: FC = () => {
     const {status} = state;
 
     if(status === "loading") return <Loader/>
+
+    if(status === 'failed') return <h1>Something went wrong</h1>
     
     return (
-        <div className="App">
-            <Header />
+        <div className="App" data-testid="app">
+            <Header/>
             <ProductList/>
         </div>
     )

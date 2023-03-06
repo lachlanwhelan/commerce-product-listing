@@ -17,8 +17,9 @@ const Searchbar: FC = () => {
   }
 
   return (
-      <Form className="searchbar d-flex" onSubmit={handleOnSubmit}>
+      <Form data-testid="form" className="searchbar d-flex" onSubmit={handleOnSubmit}>
           <Form.Control
+            data-testid="form-input"
             type="text"
             placeholder="Search products"
             className="me-2"
@@ -26,8 +27,8 @@ const Searchbar: FC = () => {
             onChange={handleOnChange}
             value={searchText}
           />
-          <Button type='submit' variant="primary">Search</Button>
-        </Form>
+          <Button data-testid="form-button" type='submit' variant="primary">Search</Button>
+      </Form>
   )
 }
 

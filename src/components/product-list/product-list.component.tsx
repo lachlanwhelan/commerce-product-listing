@@ -3,14 +3,7 @@ import { Container } from "react-bootstrap";
 import { ProductsContext } from "../../context/ProductContext";
 import Product from "../product/product.component";
 import { product } from "../../context/ProductContext";
-/* type product = {
-    index: number,
-    isSale: boolean,
-    price: string,
-    productImage: string,
-    productName: string,
-    type: string
-} */
+
 
 const ProductList: FC = () => {
 
@@ -20,7 +13,7 @@ const ProductList: FC = () => {
 
     return (
         <Container>
-            <section className="d-flex justify-content-center flex-wrap py-4">
+            <section data-testid="productsContainer" className="d-flex justify-content-center flex-wrap py-4">
                 {
                     filteredList.length === 0
 
