@@ -81,7 +81,7 @@ const getProductsAsync = async (dispatch: React.Dispatch<action>) => {
             return;
         }
 
-        throw new Error("Error:" + response.statusText);
+        throw new Error("Error fetching products");
     }
     catch(error){
         console.log(error);
