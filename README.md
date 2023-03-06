@@ -5,6 +5,8 @@ Code challenge for an interview for Front-End Developer role.
 ## URL
 https://lachlanwhelan.github.io/commerce-product-listing/
 
+JSON hosted here: https://api.npoint.io/de064040a1e40eb7647a
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -24,3 +26,4 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 ### `npm test`
 
+Runs jest component tests
