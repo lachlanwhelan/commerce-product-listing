@@ -3,7 +3,7 @@
 Code challenge for an interview for Front-End Developer role.
 
 ## URL
-[https://lachlanwhelan.github.io/commerce-product-listing/]
+https://lachlanwhelan.github.io/commerce-product-listing/
 
 ## Available Scripts
 
@@ -20,3 +20,7 @@ The page will reload if you make edits.\
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
+
+
+### `npm test`
+
