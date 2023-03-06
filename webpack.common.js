@@ -14,13 +14,7 @@ module.exports = {
                 test: /\.(js|jsx)$/,
                 exclude: /(node_modules)/,
                 loader: "babel-loader",
-                options: { 
-                    "presets": [
-                        ["@babel/preset-react", {
-                        "runtime": "automatic"
-                      }]
-                      ]
-                }
+                
             },
             {
                 test: /\.(sass|css|scss)$/,
@@ -45,6 +39,6 @@ module.exports = {
 
     resolve: {
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.css', '.scss'],
-        modules: ['src', 'node_modules'] // Assuming that your files are inside the src dir
+        modules: ['src', 'node_modules']
     }
 }
